@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+
 module design_3_tb;
 
 reg clk, reset;
@@ -60,30 +61,30 @@ sram sram_unit (.ad(ad),.we_n(we_n), .oe_n(oe_n), .ce_a_n(ce_a_n), .dio_a(dio_a)
 
 // d a t a r e g i s t e r s
 always @(posedge clk)
-if (btn[0] )
-data_reg <= sw;
-// a d d r e s s
-assign addr = {10'b0, sw};
- //
-always @*
-begin
-data_f2s = 0;
-if (btn[1]) // w r i t e
-begin
-mem = 1'b1;
-rw = 1'b0;
-data_f2s = {8'b0, data_reg};
-end
-else if (btn[2]) // r e a d
-begin
-mem = 1'b1;
-rw = 1'b1;
-end
-else
-begin
-mem = 1'b0;
-rw = 1'b1;
-end
-end
+    if (btn[0] )
+       data_reg <= sw;
+       // a d d r e s s
+       assign addr = {10'b0, sw};
+       //
+       always @*
+       begin
+         data_f2s = 0;
+         if (btn[1]) // w r i t e
+         begin
+           mem = 1'b1;
+           rw = 1'b0;
+           data_f2s = {8'b0, data_reg};
+         end
+       else if (btn[2]) // r e a d
+       begin
+         mem = 1'b1;
+         rw = 1'b1;
+       end
+     else
+     begin
+       mem = 1'b0;
+       rw = 1'b1;
+     end
+   end
 
 endmodule
