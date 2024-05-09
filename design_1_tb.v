@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+
 module design_1_tb;
 
 reg clk, reset;
@@ -7,6 +8,7 @@ reg [2:0] btn;
 wire ready;
 wire [17:0] ad;
 wire we_n, oe_n; 
+	
 // sram chip a 
 wire [15:0] dio_a;  
 wire ce_a_n, ub_a_n, lb_a_n;
@@ -15,7 +17,6 @@ reg [15:0] data_f2s;
 wire [15:0] data_s2f;
 wire [17:0] addr;
 reg [7:0] data_reg;
-
 
 initial begin
    		clk = 0;
@@ -28,6 +29,7 @@ initial begin
 		end
 	
 	end
+	
 initial begin
 #100 reset=0; sw=8'b11110000;   //1st address  
        
