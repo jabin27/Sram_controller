@@ -59,30 +59,30 @@ desgin_1 ctrl_unit
 
 // d a t a r e g i s t e r s
 always @(posedge clk)
-if (btn[0] )
-data_reg <= sw;
-// a d d r e s s
-assign addr = {10'b0, sw};
- //
-always @*
-begin
-data_f2s = 0;
-if (btn[1]) // w r i t e
-begin
-mem = 1'b1;
-rw = 1'b0;
-data_f2s = {8'b0, data_reg};
-end
-else if (btn[2]) // r e a d
-begin
-mem = 1'b1;
-rw = 1'b1;
-end
-else
-begin
-mem = 1'b0;
-rw = 1'b1;
-end
+  if (btn[0] )
+    data_reg <= sw;
+    // a d d r e s s
+    assign addr = {10'b0, sw};
+    //
+  always @*
+  begin
+    data_f2s = 0;
+    if (btn[1]) // w r i t e
+    begin
+        mem = 1'b1;
+        rw = 1'b0;
+        data_f2s = {8'b0, data_reg};
+     end
+     else if (btn[2]) // r e a d
+     begin
+        mem = 1'b1;
+        rw = 1'b1;
+     end
+     else
+     begin
+        mem = 1'b0;
+        rw = 1'b1;
+    end
 end
 
 endmodule
