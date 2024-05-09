@@ -52,7 +52,7 @@ desgin_1 ctrl_unit
 .we_n(we_n), .oe_n(oe_n), .dio_a(dio_a), 
 .ce_a_n (ce_a_n) , .ub_a_n (ub_a_n) , .lb_a_n(lb_a_n)) ;
 
-sram sram_unit (.ad(ad),.we_n(we_n), .oe_n(oe_n), .ce_a_n(ce_a_n), .dio_a(dio_a));
+// sram sram_unit (.ad(ad),.we_n(we_n), .oe_n(oe_n), .ce_a_n(ce_a_n), .dio_a(dio_a));
 
 
 // d a t a r e g i s t e r s
