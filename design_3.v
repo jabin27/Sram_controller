@@ -21,6 +21,7 @@ localparam [1:0]
 idle = 2'b00,
 rd1 = 2'b01,
 wr1 = 2'b10;  
+ 
 // signal declaration 
 reg [1:0] state_reg , state_next ; 
 reg [15: 0] data_f2s_reg, data_f2s_next ; 
@@ -33,12 +34,12 @@ reg we_temp_reg , oe_reg , tri_reg;
 // body 
 // FSMD state & data registers 
 always @(posedge clk , posedge reset)
-if (reset) 
-begin 
-state_reg <= idle;
-addr_reg <= 0;
-data_f2s_reg <= 0; 
-data_s2f_reg <= 0;
+  if (reset) 
+  begin 
+    state_reg <= idle;
+    addr_reg <= 0;
+    data_f2s_reg <= 0; 
+    data_s2f_reg <= 0;
 tri_reg <= 1'b1;
 we_temp_reg <= 1'b1;
 oe_reg <= 1'b1; 
